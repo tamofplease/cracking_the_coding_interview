@@ -6,6 +6,7 @@ int main() {
     string s, t; cin >> s >> t;
     if(s.length() > t.length()+1 || s.length() < t.length()-1) {
         puts("No");
+        return 0;
     }
 
     bool canFix = true;
@@ -26,8 +27,9 @@ int main() {
 
     /// delete
     if(s.length() > t.length()) {
-        for(int i=0;i<s.length()-1;i++) {
-            if(s[i+int(!canFix)] != t[i])  {
+        for(int i=0;i<s.length();i++) {
+            int j = i - int(!canFix); /// if after delete operation
+            if(s[i] != t[j])  {
                 if(!canFix) {
                     puts("No");
                     return 0;
@@ -40,8 +42,8 @@ int main() {
     }
 
     /// intert
-
     for(int i=0;i<s.length();i++) {
+        int j = i + (int(!canFix));
         if(s[i+int(!canFix)] != t[i])  {
             if(!canFix) {
                 puts("No");
