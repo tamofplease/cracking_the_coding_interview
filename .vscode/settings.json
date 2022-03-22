@@ -1,0 +1,17 @@
+{
+  "files.associations": {
+    "*.tag": "html",
+    "ostream": "cpp",
+    "random": "cpp",
+    "iostream": "cpp",
+    "array": "cpp",
+    "any": "cpp",
+    "string_view": "cpp",
+    "ranges": "cpp",
+    "span": "cpp",
+    "regex": "cpp",
+    "*.tcc": "cpp",
+    "algorithm": "cpp",
+    "map": "cpp"
+  }
+}
