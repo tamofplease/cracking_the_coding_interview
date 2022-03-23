@@ -31,7 +31,7 @@ class SetOfStacks {
                 stack<int> newStack;
                 newStack.push(val);
                 stacks.push_back(newStack);
-                currentNumbers++;
+                currentNumber++;
                 return;
             }
             if(currentNumber == maxNumber) {
