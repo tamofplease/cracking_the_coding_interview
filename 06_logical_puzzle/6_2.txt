@@ -1,0 +1,29 @@
+1. throw once => get 1 goal
+
+2. throw three times => get 2 goal
+
+1: p
+
+2: get 2 goal => 3 * p * (1-p)^2 = 3p^2(1-p)
+   get 3 goal => p^3
+   => 3p^2 - 2p^3
+
+define res as (if res > 0) choose 1, (if res < 0) choose 2;
+
+res = p - 3p^2 + 2p^3
+    = p(2p^2 - 3p + 1)
+    = p(2p - 1)(p - 1)
+
+## define range 0 <= p <= 1;
+
+if(p == 0 || p == 1/2 || p == 1) {
+    1 and 2 is same;
+}
+if (0 < p < 1/2) {
+    choose 1;
+}
+if (1/2 < p < 1) {
+    choose 2;
+}
+
+    
