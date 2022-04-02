@@ -7,8 +7,7 @@ using namespace std;
 int main() {
     cin.tie(0);
     ios_base::sync_with_stdio(false);
-    long numberOfInts = ((long) INT32_MAX) + 1;
-    vector<byte> bytes((int)numberOfInts / 8);
+    bitset<2147483648> bytes;
     string filename = "sample.txt";
     ifstream input_file(filename, ios::binary);
     if (!input_file.is_open()) {
@@ -18,15 +17,13 @@ int main() {
     int number;
 
     while (input_file >> number){
-        bytes[number / 8] |= 1 << (number % 8);
+        bytes[number-1] = 1;
     }
 
-    rep(i, numberOfInts / 8) {
-        rep(j, numberOfInts % 8) {
-            if(!(bytes[i] & (1 << j))) {
-                cout << i * 8 + j << endl;
-                return 0;
-            }
+    rep(i, 2147483648) {
+        if(bytes[i] == 0) {
+            cout << i << endl;
+            return 0;
         }
     }
 
